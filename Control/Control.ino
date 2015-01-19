@@ -1,7 +1,7 @@
-int pinRight = 3;                 
-int pinLeft = 2;
-int pinBack= 1;
-int pinFront = 0;
+int pinRight = 5;                 
+int pinLeft = 4;
+int pinBack= 3;
+int pinFront = 2;
 
 void setup()
 {
@@ -9,27 +9,40 @@ void setup()
   pinMode(pinLeft, OUTPUT);
   pinMode(pinBack, OUTPUT);
   pinMode(pinFront, OUTPUT);
+  Serial.begin(9600);
+  Serial.println("Setup finalizado");
 }
 
 void loop()
 {
+  Serial.println("Derecha");
+  Serial.println(digitalRead(pinRight));
   turnRight();   
-  delay(2000);                  
+  Serial.println(digitalRead(pinRight));
+  delay(2000);   
+  Serial.println("Izquierda");  
   turnLeft();    
   delay(2000);
+  Serial.println("Stop giros");
   stopTurn();
   delay(2000);
+  Serial.println("Atras");
   goBack();   
-  delay(2000);                  
+  delay(2000); 
+  Serial.println("Adelante");  
   goFront();    
   delay(2000);
+  Serial.println("Fin marcha");
   stopGo();
   delay(2000);  
+  Serial.println("Gira izquierda y adelante");
   turnLeft();
   goFront();
   delay(2000);
+  Serial.println("Derecha");
   turnRight();
   delay(2000);
+  Serial.println("Para todo.");
   stopAll();
   delay(4000);
 }
