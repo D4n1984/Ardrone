@@ -16,35 +16,8 @@ void setup()
 void loop()
 {
   Serial.println("Derecha");
-  Serial.println(digitalRead(pinRight));
   turnRight();   
-  Serial.println(digitalRead(pinRight));
-  delay(2000);   
-  Serial.println("Izquierda");  
-  turnLeft();    
-  delay(2000);
-  Serial.println("Stop giros");
-  stopTurn();
-  delay(2000);
-  Serial.println("Atras");
-  goBack();   
-  delay(2000); 
-  Serial.println("Adelante");  
-  goFront();    
-  delay(2000);
-  Serial.println("Fin marcha");
-  stopGo();
-  delay(2000);  
-  Serial.println("Gira izquierda y adelante");
-  turnLeft();
-  goFront();
-  delay(2000);
-  Serial.println("Derecha");
-  turnRight();
-  delay(2000);
-  Serial.println("Para todo.");
-  stopAll();
-  delay(4000);
+  delay(200000);  
 }
 
 void turnRight(){
